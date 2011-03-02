@@ -48,11 +48,10 @@ More to come. Questions about a Solr use case? [Open an issue](https://github.co
 ### Python (Django)
 
 * Haystack
-  * [[Installation & Configuration|Installing and Configuring Haystack]]
-  * Home page
-* SolPython
-  * [[Installation & Configuration|Installing and Configuring SolPython]]
-  * Home page
+  * [Home page](http://haystacksearch.org/)
+* SolrPy
+  * [Home page](http://pypi.python.org/pypi/solrpy/)
+
 
 ### ASP.NET
 
