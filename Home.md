@@ -48,9 +48,16 @@ More to come. Questions about a Solr use case? [Open an issue](https://github.co
 ### Python (Django)
 
 * Haystack
-  * [Home page](http://haystacksearch.org/)
-* SolrPy
-  * [Home page](http://pypi.python.org/pypi/solrpy/)
+  * [http://haystacksearch.org/](http://haystacksearch.org/)
+* solrpy
+  * [http://pypi.python.org/pypi/solrpy/](http://pypi.python.org/pypi/solrpy/)
+* Sunburnt
+  * [https://github.com/tow/sunburnt](https://github.com/tow/sunburnt)
+* Insol
+  * [https://github.com/mdomans/insol](https://github.com/mdomans/insol)
+* pysolr
+  * [http://pypi.python.org/pypi/pysolr/](http://pypi.python.org/pypi/pysolr/)
+  * [https://github.com/toastdriven/pysolr](https://github.com/toastdriven/pysolr)
 
 
 ### ASP.NET
