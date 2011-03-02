@@ -51,6 +51,7 @@ More to come. Questions about a Solr use case? [Open an issue](https://github.co
   * [http://haystacksearch.org/](http://haystacksearch.org/)
 * solrpy
   * [http://pypi.python.org/pypi/solrpy/](http://pypi.python.org/pypi/solrpy/)
+  * [http://code.google.com/p/solrpy/](http://code.google.com/p/solrpy/)
 * Sunburnt
   * [https://github.com/tow/sunburnt](https://github.com/tow/sunburnt)
 * Insol
