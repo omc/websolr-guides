@@ -1,6 +1,16 @@
 * [[Solr Clients]] - [[RSolr]]
 * [[Solr Features]] - [[TermsComponent]]
 
+## Quick start
+
+If you're already familiar with the basics and just looking for some sample code, here you go!
+
+```ruby
+rsolr = RSolr.connect :url => 'http://index.websolr.com/solr/0a1b2c3d4e5f'
+rsolr.get 'terms', :params => { 'terms.fl' => '', 'terms.prefix' => '' }
+# ...
+```
+
 ## TermsComponent basics
 
 TermsComponent bases its responses on the contents of a field which you specify. This can be a specific field, 
