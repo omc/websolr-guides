@@ -1,3 +1,4 @@
+* [[Solr Clients]]
 
 ## Solr Features
 
