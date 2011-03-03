@@ -2,11 +2,11 @@
 
 Guides to help get you up and running quickly with awesome full-text search powered by Apache Solr.
 
-## Solr 101
+## [[Solr 101]]
 
 New to Solr? Work through these tutorials to ease your learning curve and discover Solr's features, starting with the basics.
 
-### Simple blog search
+### [[Simple Blog Search|Solr 101 - Simple Blog Search]]
 
 1. Indexing and searching a simple blog post by its title and body
 2. Searching for blog posts by author names
@@ -21,7 +21,7 @@ New to Solr? Work through these tutorials to ease your learning curve and discov
 
 More to come. Questions about a Solr use case? [Open an issue](https://github.com/onemorecloud/websolr-guides/issues) on our GitHub repository.
 
-## Solr Features
+## [[Solr Features]]
 
 * Linguistic stemming
 * Geospatial search
@@ -30,3 +30,48 @@ More to come. Questions about a Solr use case? [Open an issue](https://github.co
 * NGrams
 * Text tokenization
 * Highlighting
+* TermsComponent
+
+## Solr Clients
+
+### Ruby (Ruby on Rails)
+
+* RSolr
+  * [[Search autocompletion with TermsComponent and RSolr|Clients - RSolr - Search Autocomplete with Solr TermsComponent]]
+  * [https://github.com/mwmitchell/rsolr](https://github.com/mwmitchell/rsolr)
+* Sunspot
+  * [http://outoftime.github.com/sunspot](http://outoftime.github.com/sunspot)
+
+### Python (Django)
+
+* Haystack
+  * [http://haystacksearch.org/](http://haystacksearch.org/)
+* solrpy
+  * [http://pypi.python.org/pypi/solrpy/](http://pypi.python.org/pypi/solrpy/)
+  * [http://code.google.com/p/solrpy/](http://code.google.com/p/solrpy/)
+* Sunburnt
+  * [https://github.com/tow/sunburnt](https://github.com/tow/sunburnt)
+* Insol
+  * [https://github.com/mdomans/insol](https://github.com/mdomans/insol)
+* pysolr
+  * [http://pypi.python.org/pypi/pysolr/](http://pypi.python.org/pypi/pysolr/)
+  * [https://github.com/toastdriven/pysolr](https://github.com/toastdriven/pysolr)
+
+
+### ASP.NET
+
+* SolrNet
+  * [[Installation & Configuration|Installing and Configuring SolrNet]]
+  * Home page
+
+### PHP (Zend, CakePHP, CodeIgniter)
+
+* Apache Solr PHP extension
+  * Installation & Configuration
+  * Home page: [http://pecl.php.net/package/solr](http://pecl.php.net/package/solr)
+
+### Java
+
+* Solrj
+  * [[Installation & Configuration|Installing and Configuring Solrj]]
+  * Home page
