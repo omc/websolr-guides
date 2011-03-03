@@ -37,7 +37,7 @@ More to come. Questions about a Solr use case? [Open an issue](https://github.co
 ### Ruby (Ruby on Rails)
 
 * RSolr
-  * [[Search autocompletion with TermsComponent and RSolr|Clients - RSolr - Search Autocomplete with Solr TermsComponent]]
+  * [[Search Autocomplete with Solr TermsComponent and RSolr]]
   * [https://github.com/mwmitchell/rsolr](https://github.com/mwmitchell/rsolr)
 * Sunspot
   * [http://outoftime.github.com/sunspot](http://outoftime.github.com/sunspot)
