@@ -1,3 +1,5 @@
+* [[Solr Guides Home|Home]]
+
 ### Ruby (Ruby on Rails)
 
 * RSolr
