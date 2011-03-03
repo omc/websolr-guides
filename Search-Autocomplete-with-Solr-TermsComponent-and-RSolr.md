@@ -12,16 +12,16 @@ If you use [[dynamic field naming conventions]], you could also copy all of your
   <schema>
     <types>
       
-      <fieldType name="text">
-        <!-- ... -->
+      <fieldType name="text" class="solr.TextField">
+        <!-- the rest of your definition for a typical text field goes here -->
       </fieldType>
       
-      <!-- ... -->
+      <!-- other field types omitted for brevity -->
       
     </types>
     <fields>
       
-      <!-- ... -->
+      <!-- other fields omitted for brevity -->
       
       <field name="*_text" type="text" indexed="true" stored="false" multiValued="true" />
       <field name="allText" type="text" indexed="true" stored="false" multiValued="true" />
