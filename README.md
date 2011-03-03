@@ -1,4 +1,4 @@
-# Websolr Guides
+# Websolr guides
 
 A collection of guides that will help you get up and running with powerful, full-text search using Apache Solr and WebSolr.
 
