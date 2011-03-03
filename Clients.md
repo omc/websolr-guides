@@ -1,5 +1,10 @@
 # Solr clients
 
+Here's a list of different native clients that currently support Solr.
+
+At present, Ruby, Python, ASP.net, PHP, and Java are all well-supported.
+If you know of a new client, please let us know or update this list.
+
 ## Ruby (Ruby on Rails)
 
 * acts_as_solr
