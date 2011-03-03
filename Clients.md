@@ -1,4 +1,4 @@
-# Solr Clients
+# Solr clients
 
 ## Ruby (Ruby on Rails)
 
