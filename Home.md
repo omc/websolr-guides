@@ -1,6 +1,6 @@
-Guides to help get you up and running quickly with awesome full-text search powered by Apache Solr.
+# Websolr Guides
 
-These guides are an active work in progress. If you have questions or information to contribute, see our [websolr-guides repository](https://github.com/onemorecloud/websolr-guides) on GitHub for more information about contributing. Have something to contribute? Drop us a line at [info@onemorecloud.com](mailto:info@onemorecloud.com) and we're happy to sponsor your efforts with a complimentary hosted Solr index.
+Guides to help get you up and running quickly with awesome full-text search powered by Apache Solr.
 
 ## Solr 101
 
