@@ -32,7 +32,7 @@ More to come. Questions about a Solr use case? [Open an issue](https://github.co
 * Highlighting
 * TermsComponent
 
-## Solr Clients
+## [[Solr Clients]]
 
 ### Ruby (Ruby on Rails)
 
