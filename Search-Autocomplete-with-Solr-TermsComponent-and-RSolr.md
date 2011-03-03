@@ -1,4 +1,5 @@
-[[Installing and configuring RSolr|RSolr - Installation and Configuration]]
+* [[Solr Clients]] - [[RSolr]]
+* [[Solr Features]] - [[TermsComponent]]
 
 ```ruby
 rsolr = RSolr.connect
