@@ -1,4 +1,4 @@
-# Solr clients
+# Solr Clients
 
 Here's a list of different native clients that currently support Solr.
 

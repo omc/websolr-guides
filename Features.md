@@ -1,4 +1,4 @@
-# Solr features
+# Solr Features
 
 New to Solr? Read more about some of the awesome features supported by Solr.
 
