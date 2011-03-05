@@ -22,4 +22,4 @@
 
 ## Blogs
 
-- [solr enterprise search blog (in english and polish)][http://solr.pl/en/]
+- [solr enterprise search blog (in english and polish)](http://solr.pl/en/)
