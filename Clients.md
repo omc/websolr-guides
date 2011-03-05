@@ -14,39 +14,53 @@ If you know of a new client, please let us know or update this list.
 
 ### Sunspot
 
-* [[Installation & Configuration|Installing and Configuring Sunspot]]
-* Home page: [http://outoftime.github.com/sunspot](http://outoftime.github.com/sunspot)
+* [http://outoftime.github.com/sunspot](http://outoftime.github.com/sunspot)
+
+### Tanning Bed
+
+* [https://github.com/notch8/tanning_bed](https://github.com/notch8/tanning_bed)
+
 
 ## Python (Django)
 
-* Haystack
-  * [http://haystacksearch.org/](http://haystacksearch.org/)
-* solrpy
-  * [http://pypi.python.org/pypi/solrpy/](http://pypi.python.org/pypi/solrpy/)
-  * [http://code.google.com/p/solrpy/](http://code.google.com/p/solrpy/)
-* Sunburnt
-  * [https://github.com/tow/sunburnt](https://github.com/tow/sunburnt)
-* Insol
-  * [https://github.com/mdomans/insol](https://github.com/mdomans/insol)
-* pysolr
-  * [http://pypi.python.org/pypi/pysolr/](http://pypi.python.org/pypi/pysolr/)
-  * [https://github.com/toastdriven/pysolr](https://github.com/toastdriven/pysolr)
+### Haystack
+
+* [http://haystacksearch.org/](http://haystacksearch.org/)
+
+### solrpy
+
+* [http://pypi.python.org/pypi/solrpy/](http://pypi.python.org/pypi/solrpy/)
+* [http://code.google.com/p/solrpy/](http://code.google.com/p/solrpy/)
+
+### Sunburnt
+
+* [https://github.com/tow/sunburnt](https://github.com/tow/sunburnt)
+
+### Insol
+
+* [https://github.com/mdomans/insol](https://github.com/mdomans/insol)
+
+### pysolr
+
+* [http://pypi.python.org/pypi/pysolr/](http://pypi.python.org/pypi/pysolr/)
+* [https://github.com/toastdriven/pysolr](https://github.com/toastdriven/pysolr)
 
 
 ## ASP.NET
 
-* SolrNet
-  * [[Installation & Configuration|Installing and Configuring SolrNet]]
-  * Home page
+### SolrNet
+
+* Home page
 
 ## PHP (Zend, CakePHP, CodeIgniter)
 
-* Apache Solr PHP extension
-  * Installation & Configuration
-  * Home page: [http://pecl.php.net/package/solr](http://pecl.php.net/package/solr)
+### Apache Solr PHP extension
+
+* [http://pecl.php.net/package/solr](http://pecl.php.net/package/solr)
 
 ## Java
 
-* Solrj
-  * [[Installation & Configuration|Installing and Configuring Solrj]]
-  * Home page
+### Solrj
+
+* [[Installation & Configuration|Installing and Configuring Solrj]]
+* Home page

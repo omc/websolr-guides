@@ -12,6 +12,6 @@ We've put together everything you need to get up and running quickly with Websol
 
 ## Learning more about Solr
 
-- [[Solr Clients]]
-- [[Solr Features]]
-- [[Solr Resources]]
+- [[Solr Clients|clients]]
+- [[Solr Features|solr-features]]
+- [[Solr Resources|solr-resources]]
