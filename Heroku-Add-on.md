@@ -1,4 +1,4 @@
-# Heroku
+# Heroku Add-on
 
 The Websolr add-on for [Heroku](http://heroku.com) allows you to use our managed search service with your Heroku app.
 
