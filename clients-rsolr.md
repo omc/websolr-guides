@@ -102,4 +102,4 @@ search['responseHeader']['QTime'] # => 2
 search['response']['docs'] # => [ { 'id': 1, ... }, ... ]
 ```
 
-In addition to the `searchHeader` and `response` blocks, there may be others — such as [[`spellcheck`|solr-features-spellcheck]] — depending on how you have configured your index.
+In addition to the `searchHeader` and `response` blocks, there may be others — such as `[[spellcheck|solr-features-spellcheck]]` — depending on how you have configured your index.
