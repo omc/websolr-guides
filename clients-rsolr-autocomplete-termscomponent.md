@@ -10,6 +10,10 @@ rsolr.get 'terms', :params => { 'terms.fl' => '', 'terms.prefix' => '' }
 # ...
 ```
 
+## Installing and using RSolr
+
+Please refer to our article on [[Installing and using RSolr|clients-rsolr]] for a more comprehensive look at general [[RSolr|clients-rsolr]] usage.
+
 ## TermsComponent basics
 
 TermsComponent bases its responses on the contents of a field which you specify. This can be a specific field, 
