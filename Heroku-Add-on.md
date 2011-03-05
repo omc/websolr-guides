@@ -82,7 +82,7 @@ Sunspot provides Rake tasks to start and stop a local Solr server for developmen
 require 'sunspot/rails/tasks'
 ```
 
-You may wish to familiarize yourself with the available tasks by running rake -T sunspot.
+You may wish to familiarize yourself with the available tasks by running *rake -T sunspot*.
 
 ### Running a local Solr server with Sunspot
 
@@ -95,7 +95,7 @@ rake sunspot:solr:stop
 
 ### Re-indexing Data
 
-If you are adding Websolr to an application with existing data in your development or production environment, you will need to “re-index” your data. Likewise, if you make changes to a model’s searchable configuration, or change your index’s configuration at the Websolr control panel, you will need to reindex for your changes to take effect.
+If you are adding Websolr to an application with existing data in your development or production environment, you will need to “re-index” your data. Likewise, if you make changes to a model’s *searchable* configuration, or change your index’s configuration at the Websolr control panel, you will need to reindex for your changes to take effect.
 
 In order to reindex your production data, you may run a command similar to the following from your application’s directory:
 
@@ -109,11 +109,11 @@ If you are indexing a large number of documents, or your models us a lot of memo
 heroku rake sunspot:reindex[10]
 ```
 
-Refer to rake -T sunspot to see the usage for the reindex task.
+Refer to *rake -T sunspot* to see the usage for the reindex task.
 
 ### Indexing Asynchronously with Heroku Workers
 
-Queuing your updates to Solr is a perfect job for Heroku’s Delayed Job Workers. Sending updates to Solr has the advantage of increasing your application’s performance and robustness. Simply add the following line to your model after the searchable block:
+Queuing your updates to Solr is a perfect job for Heroku’s Delayed Job Workers. Sending updates to Solr has the advantage of increasing your application’s performance and robustness. Simply add the following line to your model after the *searchable* block:
 
 ```ruby
 handle_asynchronously :solr_index
@@ -121,19 +121,19 @@ handle_asynchronously :solr_index
 
 ## Using a Different Solr Client
 
-There are other Ruby clients, including the venerable acts_as_solr. If you are already using one of these clients and are not interested in switching your application to Sunspot, here are a few pointers for using Websolr in production.
+There are other Ruby clients, including the venerable *acts_as_solr*. If you are already using one of these clients and are not interested in switching your application to Sunspot, here are a few pointers for using Websolr in production.
 
-Your index’s URL is set in the WEBSOLR_URL environment variable. If your Solr client can be configured at runtime, we recommend creating a Rails initializer at config/initializer/websolr.rb in which you instruct your client to connect to ENV['WEBSOLR_URL'] when present.
+Your index’s URL is set in the *WEBSOLR_URL* environment variable. If your Solr client can be configured at runtime, we recommend creating a Rails initializer at *config/initializer/websolr.rb* in which you instruct your client to connect to *ENV['WEBSOLR_URL']* when present.
 
-Alternatively, you may run heroku config --long from your application’s directory to view the value for WEBSOLR_URL and update the relevant configuration file for your particular Solr client.
+Alternatively, you may run *heroku config --long* from your application’s directory to view the value for *WEBSOLR_URL* and update the relevant configuration file for your particular Solr client.
 
 ## Configuring your index
 
-When your index is first created, it will be automatically configured using the schema.xml for the latest version of Sunspot, which is a very flexible schema that can cover a lot of uses.
+When your index is first created, it will be automatically configured using the *schema.xml* for the latest version of Sunspot, which is a very flexible schema that can cover a lot of uses.
 
-Websolr provides a control panel at http://websolr.com/ where you may make changes to your index, such as adding or removing different Solr features, selecting a different Solr client, providing your own schema.xml and so on.
+Websolr provides a control panel at http://websolr.com/ where you may make changes to your index, such as adding or removing different Solr features, selecting a different Solr client, providing your own *schema.xml* and so on.
 
-You may log in to the Websolr control panel at http://websolr.com/ using your account’s Websolr username and password, which you may find by running heroku config --long from your application’s directory.
+You may log in to the Websolr control panel at http://websolr.com/ using your account’s Websolr username and password, which you may find by running *heroku config --long* from your application’s directory.
 
 ## Questions?
 
