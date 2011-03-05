@@ -2,6 +2,8 @@
 
 The Websolr add-on for [Heroku](http://heroku.com) allows you to use our managed search service with your Heroku app.
 
+This documentation can also be found at the [Heroku DevCenter](http://devcenter.heroku.com/articles/websolr).
+
 ## Install the Add-on
 
 ```bash
