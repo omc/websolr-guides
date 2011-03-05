@@ -1,6 +1,6 @@
 # Heroku
 
-The Websolr add-on for Herkou allows you to use our managed search service with your Heroku app.
+The Websolr add-on for [Heroku](http://heroku.com) allows you to use our managed search service with your Heroku app.
 
 ## Install the Add-on
 
@@ -56,4 +56,46 @@ end
 
 To learn more, refer to the following article at the [Sunspot wiki](http://wiki.github.com/outoftime/sunspot/):
 
-[Setting up classes for search and indexing](http://wiki.github.com/outoftime/sunspot/setting-up-classes-for-search-and-indexing)
+* [Setting up classes for search and indexing](http://wiki.github.com/outoftime/sunspot/setting-up-classes-for-search-and-indexing)
+
+### Searching
+
+To search the model in the above example, you may use something like the following:
+
+```ruby
+@search = Post.search { keywords 'hello' }
+@posts  = @search.results
+```
+
+(If your model already defines a *search* method, you may use the *solr_search* method instead, for which *search* is an alias.)
+
+Sunspot exposes the full functionality of Solr. To learn more about searching your models, refer to the following articles at the Sunspot wiki:
+
+* [Full-text search with sunspot](http://wiki.github.com/outoftime/sunspot/fulltext-search)
+* [Sunspot search options](http://wiki.github.com/outoftime/sunspot/working-with-search)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
