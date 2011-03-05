@@ -54,7 +54,7 @@ class Post < ActiveRecord::Base
 end
 ```
 
-To learn more, refer to the following article at the [Sunspot wiki](http://wiki.github.com/outoftime/sunspot/):
+To learn more, refer to the following article at the [Sunspot wiki](http://wiki.github.com/outoftime/sunspot):
 
 * [Setting up classes for search and indexing](http://wiki.github.com/outoftime/sunspot/setting-up-classes-for-search-and-indexing)
 
@@ -95,7 +95,7 @@ rake sunspot:solr:stop
 
 ### Re-indexing Data
 
-If you are adding Websolr to an application with existing data in your development or production environment, you will need to “re-index” your data. Likewise, if you make changes to a model’s *searchable* configuration, or change your index’s configuration at the Websolr control panel, you will need to reindex for your changes to take effect.
+If you are adding Websolr to an application with existing data in your development or production environment, you will need to “re-index” your data. Likewise, if you make changes to a model’s *searchable* configuration, or change your index’s configuration at the [Websolr control panel](http://websolr.com/slices), you will need to reindex for your changes to take effect.
 
 In order to reindex your production data, you may run a command similar to the following from your application’s directory:
 
@@ -113,7 +113,7 @@ Refer to *rake -T sunspot* to see the usage for the reindex task.
 
 ### Indexing Asynchronously with Heroku Workers
 
-Queuing your updates to Solr is a perfect job for Heroku’s Delayed Job Workers. Sending updates to Solr has the advantage of increasing your application’s performance and robustness. Simply add the following line to your model after the *searchable* block:
+Queuing your updates to Solr is a perfect job for Heroku’s [Delayed Job Workers](http://devcenter.heroku.com/articles/delayed-job). Sending updates to Solr has the advantage of increasing your application’s performance and robustness. Simply add the following line to your model after the *searchable* block:
 
 ```ruby
 handle_asynchronously :solr_index
@@ -131,15 +131,15 @@ Alternatively, you may run *heroku config --long* from your application’s dire
 
 When your index is first created, it will be automatically configured using the *schema.xml* for the latest version of Sunspot, which is a very flexible schema that can cover a lot of uses.
 
-Websolr provides a control panel at http://websolr.com/ where you may make changes to your index, such as adding or removing different Solr features, selecting a different Solr client, providing your own *schema.xml* and so on.
+Websolr provides a control panel at [http://websolr.com](http://websolr.com) where you may make changes to your index, such as adding or removing different Solr features, selecting a different Solr client, providing your own *schema.xml* and so on.
 
-You may log in to the Websolr control panel at http://websolr.com/ using your account’s Websolr username and password, which you may find by running *heroku config --long* from your application’s directory.
+You may log in to the Websolr control panel at [http://websolr.com](http://websolr.com) using your account’s Websolr username and password, which you may find by running *heroku config --long* from your application’s directory.
 
 ## Questions?
 
-If you are experiencing a problem with installing or using the Websolr add-on, you may visit http://help.websolr.com/ or http://support.heroku.com/ for assistance. Feel free to also ask questions about the service itself and the features we support.
+If you are experiencing a problem with installing or using the Websolr add-on, you may visit [http://help.websolr.com](http://help.websolr.com) or [http://support.heroku.com](http://support.heroku.com) for assistance. Feel free to also ask questions about the service itself and the features we support.
 
-If you have general questions about implementing various search features using Sunspot, you should consider asking the Sunspot mailing list or the Heroku users mailing list. We support all of the features used by Sunspot out of the box.
+If you have general questions about implementing various search features using Sunspot, you should consider asking the [Sunspot mailing list](http://groups.google.com/group/ruby-sunspot) or the [Heroku users mailing list](Heroku users mailing list). We support all of the features used by Sunspot out of the box.
 
-If you have general questions about Solr and its features, you can also ask the official solr-user mailing list.
+If you have general questions about Solr and its features, you can also ask the official [solr-user mailing list](http://lucene.apache.org/solr/mailing_lists.html#Users).
 
