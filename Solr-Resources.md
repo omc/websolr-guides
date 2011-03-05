@@ -15,3 +15,7 @@
 ## Wikis
 
 - [Apache Solr Wiki](http://wiki.apache.org/solr/FrontPage)
+
+## Tutorials
+
+- [Apache Solr tutorial](http://lucene.apache.org/solr/tutorial.html)
