@@ -11,3 +11,7 @@
 
 - [Solr 1.4 Enterprise Search Server ](http://www.amazon.com/Solr-1-4-Enterprise-Search-Server/dp/1847195881/)
 - [Search Patterns: Design for Discovery](http://www.amazon.com/Search-Patterns-Discovery-Peter-Morville/dp/0596802277/)
+
+## Wikis
+
+- [Apache Solr Wiki](http://wiki.apache.org/solr/FrontPage)
