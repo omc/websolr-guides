@@ -8,7 +8,7 @@ We've put together everything you need to get up and running quickly with Websol
 
 ## Tutorials
 
-- [[Search Autocomplete with Solr TermsComponent and RSolr]]
+- [[Search Autocomplete with Solr TermsComponent and RSolr|clients/rsolr/autocomplete-termscomponent]]
 
 ## Learning more about Solr
 
