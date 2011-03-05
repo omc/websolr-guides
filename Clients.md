@@ -7,15 +7,15 @@ If you know of a new client, please let us know or update this list.
 
 ## Ruby (Ruby on Rails)
 
-* acts_as_solr
-  * [[Installation & Configuration|Installing and Configuring acts_as_solr]]
-  * Home page
-* RSolr
-  * [[Installation & Configuration|Installing and Configuring RSolr]]
-  * Home page
-* Sunspot
-  * [[Installation & Configuration|Installing and Configuring Sunspot]]
-  * Home page
+### [[RSolr|clients-rsolr]]
+* [[Installation & Configuration|clients-rsolr]]
+* [[Search term autocompletion with TermsComponent|clients-rsolr-autocomplete-termscomponent]]
+* Home page: [https://github.com/mwmitchell/rsolr](https://github.com/mwmitchell/rsolr)
+
+### Sunspot
+
+* [[Installation & Configuration|Installing and Configuring Sunspot]]
+* Home page: [http://outoftime.github.com/sunspot](http://outoftime.github.com/sunspot)
 
 ## Python (Django)
 
