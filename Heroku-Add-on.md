@@ -135,11 +135,3 @@ Websolr provides a control panel at [http://websolr.com](http://websolr.com) whe
 
 You may log in to the Websolr control panel at [http://websolr.com](http://websolr.com) using your account’s Websolr username and password, which you may find by running *heroku config --long* from your application’s directory.
 
-## Questions?
-
-If you are experiencing a problem with installing or using the Websolr add-on, you may visit [http://help.websolr.com](http://help.websolr.com) or [http://support.heroku.com](http://support.heroku.com) for assistance. Feel free to also ask questions about the service itself and the features we support.
-
-If you have general questions about implementing various search features using Sunspot, you should consider asking the [Sunspot mailing list](http://groups.google.com/group/ruby-sunspot) or the [Heroku users mailing list](Heroku users mailing list). We support all of the features used by Sunspot out of the box.
-
-If you have general questions about Solr and its features, you can also ask the official [solr-user mailing list](http://lucene.apache.org/solr/mailing_lists.html#Users).
-
