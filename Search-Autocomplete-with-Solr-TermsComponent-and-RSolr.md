@@ -1,5 +1,4 @@
-* [[Solr Clients]] - [[RSolr]]
-* [[Solr Features]] - [[TermsComponent]]
+# Search Autocomplete with Solr TermsComponent and RSolr
 
 ## Quick start
 
