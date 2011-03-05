@@ -74,28 +74,72 @@ Sunspot exposes the full functionality of Solr. To learn more about searching yo
 * [Full-text search with sunspot](http://wiki.github.com/outoftime/sunspot/fulltext-search)
 * [Sunspot search options](http://wiki.github.com/outoftime/sunspot/working-with-search)
 
+## Sunspot Rake Tasks
 
+Sunspot provides Rake tasks to start and stop a local Solr server for development and testing. In order to use these Rake tasks, add the following line to your application’s *Rakefile*:
 
+```ruby
+require 'sunspot/rails/tasks'
+```
 
+You may wish to familiarize yourself with the available tasks by running rake -T sunspot.
 
+### Running a local Solr server with Sunspot
 
+To start and stop a local Solr server for development, run the following rake tasks:
 
+```ruby
+rake sunspot:solr:start
+rake sunspot:solr:stop
+```
 
+### Re-indexing Data
 
+If you are adding Websolr to an application with existing data in your development or production environment, you will need to “re-index” your data. Likewise, if you make changes to a model’s searchable configuration, or change your index’s configuration at the Websolr control panel, you will need to reindex for your changes to take effect.
 
+In order to reindex your production data, you may run a command similar to the following from your application’s directory:
 
+```ruby
+heroku rake sunspot:reindex
+```
 
+If you are indexing a large number of documents, or your models us a lot of memory, you may need to reindex in batches smaller than Sunspot’s default of 50. We recommend starting small and gradually experimenting to find the best results. To reindex with a batch size of 10, use the following:
 
+```ruby
+heroku rake sunspot:reindex[10]
+```
 
+Refer to rake -T sunspot to see the usage for the reindex task.
 
+### Indexing Asynchronously with Heroku Workers
 
+Queuing your updates to Solr is a perfect job for Heroku’s Delayed Job Workers. Sending updates to Solr has the advantage of increasing your application’s performance and robustness. Simply add the following line to your model after the searchable block:
 
+```ruby
+handle_asynchronously :solr_index
+```
 
+## Using a Different Solr Client
 
+There are other Ruby clients, including the venerable acts_as_solr. If you are already using one of these clients and are not interested in switching your application to Sunspot, here are a few pointers for using Websolr in production.
 
+Your index’s URL is set in the WEBSOLR_URL environment variable. If your Solr client can be configured at runtime, we recommend creating a Rails initializer at config/initializer/websolr.rb in which you instruct your client to connect to ENV['WEBSOLR_URL'] when present.
 
+Alternatively, you may run heroku config --long from your application’s directory to view the value for WEBSOLR_URL and update the relevant configuration file for your particular Solr client.
 
+## Configuring your index
 
+When your index is first created, it will be automatically configured using the schema.xml for the latest version of Sunspot, which is a very flexible schema that can cover a lot of uses.
 
+Websolr provides a control panel at http://websolr.com/ where you may make changes to your index, such as adding or removing different Solr features, selecting a different Solr client, providing your own schema.xml and so on.
 
+You may log in to the Websolr control panel at http://websolr.com/ using your account’s Websolr username and password, which you may find by running heroku config --long from your application’s directory.
+
+## Questions?
+
+If you are experiencing a problem with installing or using the Websolr add-on, you may visit http://help.websolr.com/ or http://support.heroku.com/ for assistance. Feel free to also ask questions about the service itself and the features we support.
+
+If you have general questions about implementing various search features using Sunspot, you should consider asking the Sunspot mailing list or the Heroku users mailing list. We support all of the features used by Sunspot out of the box.
+
+If you have general questions about Solr and its features, you can also ask the official solr-user mailing list.
 
