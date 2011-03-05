@@ -14,9 +14,5 @@ The Apache Solr search server presents an API, and there are a number of open so
 
 Installing Sunspot with Rails 2.3
 
-As of this writing, the current release of Sunspot is version 1.2.1. Sunspot provides a Rails plugin as a gem, named
-```
-  sunspot_rails
-```
-.
+As of this writing, the current release of Sunspot is version 1.2.1. Sunspot provides a Rails plugin as a gem, named *sunspot_rails*.
 
