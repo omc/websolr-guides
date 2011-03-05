@@ -4,4 +4,6 @@ Websolr is a managed search service provided by Onemorecloud and powered by Apac
 
 ## Install the Add-on
 
-```$ heroku addons:add websolr```
+```
+$ heroku addons:add websolr
+```
