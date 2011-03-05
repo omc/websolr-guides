@@ -20,7 +20,7 @@ As of this writing, the current release of Sunspot is version 1.2.1. Sunspot pro
 
 Rails 3 applications use Bundler by default. If you are developing a Rails 2.3 application, please review [Using Bundler with Rails 2.3](http://gembundler.com/rails23.html) to ensure that your application is configured to use Bundler correctly.
 
-Once you have set up your application to use Bundler, add the *sunspot_rails* gem to your *Gemfile*.
+Once you have set up your application to use Bundler, add the `sunspot_rails` gem to your *Gemfile*.
 
 ```ruby
 gem 'sunspot_rails', '~> 1.2.1'
