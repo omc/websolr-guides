@@ -1,5 +1,7 @@
 # RSolr
 
+* [[Solr Clients|clients]]
+
 RSolr is a Ruby client for Solr. It is designed to be a simple, low-level wrapper that provides direct access to the Solr API. As such, its use encourages familiarity with the Solr API, which in turn offers simple, direct access to Solr.
 
 This document provides a basic overview of common RSolr usage. You can find RSolr's comprehensive official documentation at its source repository on GitHub at [https://github.com/mwmitchell/rsolr](https://github.com/mwmitchell/rsolr).
