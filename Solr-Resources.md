@@ -19,3 +19,7 @@
 ## Tutorials
 
 - [Apache Solr tutorial](http://lucene.apache.org/solr/tutorial.html)
+
+## Blogs
+
+- [solr enterprise search blog (in english and polish)][http://solr.pl/en/]
