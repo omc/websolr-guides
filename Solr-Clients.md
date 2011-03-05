@@ -13,6 +13,10 @@
 
 * [http://outoftime.github.com/sunspot](http://outoftime.github.com/sunspot)
 
+### Tanning Bed
+
+* [https://github.com/notch8/tanning_bed](https://github.com/notch8/tanning_bed)
+
 
 ## Python (Django)
 
