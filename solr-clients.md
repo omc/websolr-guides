@@ -14,7 +14,7 @@ If you know of a new client, please let us know or update this list.
 
 ### [[Sunspot]]
 
-* [Sunspot Quick Start]
+* [[Sunspot Quick Start]]
 * [http://outoftime.github.com/sunspot](http://outoftime.github.com/sunspot)
 
 ### Tanning Bed
