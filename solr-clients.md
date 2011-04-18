@@ -12,8 +12,9 @@ If you know of a new client, please let us know or update this list.
 * [[Search term autocompletion with TermsComponent|clients-rsolr-autocomplete-termscomponent]]
 * Home page: [https://github.com/mwmitchell/rsolr](https://github.com/mwmitchell/rsolr)
 
-### Sunspot
+### [[Sunspot]]
 
+* [Sunspot Quick Start]
 * [http://outoftime.github.com/sunspot](http://outoftime.github.com/sunspot)
 
 ### Tanning Bed
