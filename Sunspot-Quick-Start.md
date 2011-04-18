@@ -1,5 +1,7 @@
 # Quick start for the [[Sunspot]] Solr client for Ruby
 
+[[Solr clients]] > [[Sunspot]]
+
 Here's a quick start guide for getting started with the latest version of the Sunspot Solr client for Ruby. By the end of this guide, you should have working full-text search in your development environment, powered by a locally running Solr instance.
 
 ## Installing Sunspot
