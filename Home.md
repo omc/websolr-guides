@@ -2,9 +2,10 @@
 
 We've put together everything you need to get up and running quickly with Websolr.
 
-## Getting started
+## Partners
 
 - [[Heroku Add-on]]
+- [[EngineYard]]
 
 ## Tutorials
 
