@@ -59,6 +59,10 @@ If you know of a new client, please let us know or update this list.
 
 * [http://pecl.php.net/package/solr](http://pecl.php.net/package/solr)
 
+### Pure PHP client
+
+* [http://code.google.com/p/solr-php-client/](http://code.google.com/p/solr-php-client/)
+
 ## Java
 
 ### Solrj
