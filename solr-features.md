@@ -1,31 +1,33 @@
 # Solr Features
 
+_[TODO: @nz: expand on these with demos and integration tutorials, then link to it from the main guides wiki.]_
+
 New to Solr? Read more about some of the awesome features supported by Solr.
 
 ## Linguistic stemming
 
-Stuff goes here
+http://wiki.apache.org/solr/AnalyzersTokenizersTokenFilters
 
 ## Geospatial search
 
-Stuff goes here
+http://wiki.apache.org/solr/SpatialSearch
 
 ## Faceting
 
-Stuff goes here
+http://wiki.apache.org/solr/SolrFacetingOverview
 
 ## Synonyms
 
-Stuff goes here
+http://wiki.apache.org/solr/AnalyzersTokenizersTokenFilters#solr.SynonymFilterFactory
 
 ## NGrams
 
-Stuff goes here
+http://wiki.apache.org/solr/AnalyzersTokenizersTokenFilters#solr.EdgeNGramFilterFactory
 
 ## Text tokenization
 
-Stuff goes here
+http://wiki.apache.org/solr/AnalyzersTokenizersTokenFilters#TokenizerFactories
 
 ## Highlighting
 
-Stuff goes here
+http://wiki.apache.org/solr/HighlightingParameters
