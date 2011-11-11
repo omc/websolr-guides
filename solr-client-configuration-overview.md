@@ -58,7 +58,7 @@ solr_interface = sunburnt.SolrInterface("http://index.websolr.com/solr/0a1b2c3d4
 
 ### pysolr
 
-```
+```python
 conn = Solr('http://index.websolr.com/solr/0a1b2c3d4e5f')
 ```
 
@@ -66,7 +66,7 @@ conn = Solr('http://index.websolr.com/solr/0a1b2c3d4e5f')
 
 ### SolrNet
 
-```
+```csharp
 Startup.Init<Product>("http://localhost:8983/solr");
 ```
 
