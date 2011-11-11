@@ -103,4 +103,4 @@ SolrServer server = new CommonsHttpSolrServer("http://index.websolr.com/solr/0a1
 
 ## Wordpress
 
-[[/system/guides/assets/images/wordpress.png|width=620px|height=276px]]
+[[https://websolr.com/system/guides/assets/images/wordpress.png|width=620px|height=276px]]
