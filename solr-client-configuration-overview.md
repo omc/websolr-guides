@@ -99,8 +99,10 @@ $solr = new Apache_Solr_Service('index.websolr.com', 80, '/solr/0a1b2c3d4e5f');
 SolrServer server = new CommonsHttpSolrServer("http://index.websolr.com/solr/0a1b2c3d4e5f");
 ```
 
-## Drupal
-
 ## Wordpress
 
 [[https://websolr.com/system/guides/assets/images/wordpress.png|width=620px|height=276px]]
+
+## Drupal
+
+[[https://websolr.com/system/guides/assets/images/drupal.png|width=620px|height=269px]]
