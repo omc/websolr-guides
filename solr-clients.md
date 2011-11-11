@@ -27,6 +27,8 @@ If you know of a new client, please let us know or update this list.
 ### Haystack
 
 * [http://haystacksearch.org/](http://haystacksearch.org/)
+* [Haystack Tutorial](http://docs.haystacksearch.org/dev/tutorial.html)
+
 
 ### solrpy
 
@@ -62,10 +64,11 @@ If you know of a new client, please let us know or update this list.
 ### Pure PHP client
 
 * [http://code.google.com/p/solr-php-client/](http://code.google.com/p/solr-php-client/)
+* [Example Usage](http://code.google.com/p/solr-php-client/wiki/ExampleUsage)
 
 ## Java
 
 ### Solrj
 
-* [[Installation & Configuration|Installing and Configuring Solrj]]
-* Home page
+* [http://wiki.apache.org/solr/Solrj](http://wiki.apache.org/solr/Solrj)
+
