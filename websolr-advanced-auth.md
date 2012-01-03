@@ -10,32 +10,6 @@ Websolr advanced authorization is an opt-in feature. Upon enabling this feature
 for your index you will be issued a secret token (herein called SECRET). This
 token is used with the HMAC-SHA1 algorithm as described below.
 
-## What's this app for?
-
-This application is provided as a working sample to demonstrate how Websolr
-authorization works. You may fork it and use it as a starting point for your
-own applications as you like. We also welcome forks to help us duplicate any
-errors that may be discovered.
-
-## Installing & running
-
-To install and use the sample app locally and demonstrate that its calls to
-Solr work you should run the following:
-
-```
-export WEBSOLR_URL='your-index-url'
-export WEBSOLR_AUTH='your-index-auth-secret'
-
-git clone git://github.com/nz/websolr-demo-advanced-auth.git
-cd websolr-advanced-auth
-
-bundle install
-bundle exec rake db:seed
-
-bundle exec rails server
-open http://localhost:300/
-```
-
 ## Authorization scheme
 
 The authorization scheme works by including three additional HTTP headers with
