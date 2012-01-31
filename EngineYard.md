@@ -12,7 +12,7 @@ Check out our [[Sunspot Quick Start]] to get up and running in your development 
 
 #### 1. Sign up for Websolr at [http://websolr.com/plans](http://websolr.com/plans)
 
-Engine Yard customers may use the coupon code `ENGINEYARD` during signup to receive your first month for free for any of our plans.
+New customers hosting on Engine Yard may use the coupon code `ENGINEYARD` during signup to receive your first month for free. (Up to $100.)
 
 #### 2. Create an index
 
