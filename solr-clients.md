@@ -53,7 +53,7 @@ If you know of a new client, please let us know or update this list.
 
 ### SolrNet
 
-* Home page
+* [http://code.google.com/p/solrnet/](http://code.google.com/p/solrnet/)
 
 ## PHP (Zend, CakePHP, CodeIgniter)
 
