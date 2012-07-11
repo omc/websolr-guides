@@ -48,7 +48,7 @@ def auth_headers(secret=ENV['WEBSOLR_AUTH'])
   nonce = Time.now.to_i.to_s.split(//).sort_by{rand}.join
   auth  = OpenSSL::HMAC.hexdigest('sha1', secret, "#{time}#{nonce}")
   {
-    'X-Websolr-Time'  => time,
+    'X-Websolr-Time'  => time.to_s,
     'X-Websolr-Nonce' => nonce,
     'X-Websolr-Auth'  => auth
   }
