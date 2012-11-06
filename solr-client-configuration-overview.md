@@ -67,7 +67,7 @@ conn = Solr('http://index.websolr.com/solr/0a1b2c3d4e5f')
 ### SolrNet
 
 ```csharp
-Startup.Init<Product>("http://localhost:8983/solr");
+Startup.Init<Product>("http://index.websolr.com/solr/0a1b2c3d4e5f");
 ```
 
 (Where `Product` is your [Solr document mapping class](http://code.google.com/p/solrnet/wiki/Mapping).)
