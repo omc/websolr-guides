@@ -2,7 +2,7 @@
 
 Here's a list of different native clients that currently support Solr.
 
-At present, Ruby, Python, ASP.net, PHP, and Java are all well-supported.
+At present, Ruby, Python, .NET, PHP, and Java are all well-supported.
 If you know of a new client, please let us know or update this list.
 
 ## Ruby (Ruby on Rails)
@@ -48,12 +48,11 @@ If you know of a new client, please let us know or update this list.
 * [http://pypi.python.org/pypi/pysolr/](http://pypi.python.org/pypi/pysolr/)
 * [https://github.com/toastdriven/pysolr](https://github.com/toastdriven/pysolr)
 
-
-## ASP.NET
+## .NET
 
 ### SolrNet
 
-* Home page
+* [Home page](http://code.google.com/p/solrnet/)
 
 ## PHP (Zend, CakePHP, CodeIgniter)
 
