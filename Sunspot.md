@@ -8,4 +8,7 @@
 
 ## Other links
 
-* **Home page:** * [http://outoftime.github.com/sunspot](http://outoftime.github.com/sunspot)
+* [Homepage](http://sunspot.github.io/)
+* [Github](https://github.com/sunspot/sunspot)
+* [Wiki](https://github.com/sunspot/sunspot/wiki)
+* [Bug Reports](https://github.com/sunspot/sunspot/issues)
