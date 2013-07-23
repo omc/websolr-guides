@@ -11,11 +11,11 @@ In this guide, we're going to cover the basics of setting up a websolr index to 
 
 For the purposes of this tutorial, I set up a vanilla Drupal 7 install. I used the Devel module to generate 50 nodes of random content so we would have something to index later. After my dummy content was created, I uninstalled and removed this module. I also downloaded the [apachesolr](https://drupal.org/project/apachesolr) module and extracted it to `sites/all/modules/apachesolr` Other than that, I did not add or change any module settings along the way. Your situation is probably different, but it shouldn't matter at this point.
 
-[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/01 - home.png]]
+[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/01%20-%20home.png]]
 
 Make sure you navigate to `admin/modules` and verify that the ApacheSolr module and its related modules have been activated:
 
-[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/02 - modules.png]]
+[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/02%20-%20modules.png]]
 
 Great! That's all you need to get started. Next, we'll configure the websolr index that will hold your documents.
 
@@ -24,15 +24,15 @@ Great! That's all you need to get started. Next, we'll configure the websolr ind
 
 Next, you'll want to [add a new slice](https://websolr.com/slices/new) to your websolr account. Give your index a descriptive name, select the server group nearest to your application, then select "Drupal ApacheSolr Search 7.x-1.1". Don't worry if the minor versions are different between your system and this tutorial:
 
-[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/03 - d7-apachesolr-create-index.png]]
+[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/03%20-%20d7-apachesolr-create-index.png]]
 
 When this form has been filled out, go ahead and click "Create." Afterwards, you will be redirected to a page that shows the status of your index and will probably show a message about taking a few minutes to complete:
 
-[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/04 - d7-apachesolr-create-index-2.png]]
+[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/04%20-%20d7-apachesolr-create-index-2.png]]
 
 This is usually finished within a few minutes, so take a short break. When you come back, hit refresh to see the following:
 
-[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/03 - d7-apachesolr-create-index-3.png]]
+[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/03%20-%20d7-apachesolr-create-index-3.png]]
 
 If you see a message that says your index looks ok, you're done. Occasionally provisioning errors will occur and you will see a message about taking a long time to provision your index. Try appending "/refreshing" to the page's URL and give it a minute or two. If that doesn't clear things up, you will need to open a [support ticket](http://help.websolr.com) and have the Support Team take a closer look.
 
@@ -41,42 +41,42 @@ If you see a message that says your index looks ok, you're done. Occasionally pr
 
 Once your websolr index is up and running, it's time to configure the ApacheSolr module. Navigate to `admin/config/search/apachesolr/settings` and you should see something like this:
 
-[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/06 - d7-apachesolr-configure-apachesolr.png]]
+[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/06%20-%20d7-apachesolr-configure-apachesolr.png]]
 
 This is the default setting that comes bundled with the module. Clicking on the "Edit" link will bring up the following form:
 
-[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/07 - d7-apachesolr-configure-apachesolr-2.png]]
+[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/07%20-%20d7-apachesolr-configure-apachesolr-2.png]]
 
 You will want the Solr server URL to point to the URL of the websolr index that you just created. Note that websolr communicates over the standard HTTP port 80, not 8080 or 8983 (standard ports for Tomcat and Jetty respectively). Consequently, you can leave out the port specification and your app will still be able to communicate with websolr. For example, my settings look like this:
 
-[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/08 - d7-apachesolr-configure-apachesolr-3.png]]
+[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/08%20-%20d7-apachesolr-configure-apachesolr-3.png]]
 
 Once you have your URL and a description set up, go ahead and click on "Test connection" to verify that everything is working. You should get a message that your site has contacted the Apache Solr server. If not, check your settings and try again. Once the connection has been verified, click on "Save."
 
-[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/09 - d7-apachesolr-configure-apachesolr-4.png]]
+[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/09%20-%20d7-apachesolr-configure-apachesolr-4.png]]
 
 Next, click on the "Default Index" tab. You will see a few actions for indexing, reindexing and deleting the index. Click on the first one, "Index queued content." This will index a maximum of 50 documents (by default). You could also index all documents at this time, but that may take a while depending on how many documents you have.
 
-[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/10 - d7-apachesolr-configure-apachesolr-5.png]]
+[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/10%20-%20d7-apachesolr-configure-apachesolr-5.png]]
 
 If everything went smoothly, you should get a message like the one below. If you see any errors, double-check that your settings are correct and that the apachesolr module can communicate with websolr:
 
-[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/11 - d7-apachesolr-configure-apachesolr-6.png]]
+[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/11%20-%20d7-apachesolr-configure-apachesolr-6.png]]
 
 Finally, navigate to `admin/config/search/settings` and make sure that the ApacheSolr module is set to the default seach module. You may also want to disable the other modules, especially if you don't need them:
 
-[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/09a - d7-apachesolr-configure-apachesolr-1.png]]
+[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/09a%20-%20d7-apachesolr-configure-apachesolr-1.png]]
 
 
 ## Checking on your index
 
 After the apachesolr module has indicated a successful indexing of your documents, you can navigate to your websolr URL and append "/select" to it. This will return the first set of documents in your index. If you don't see them right away after indexing, don't worry. For reasons of network performance and stability, all websolr indices have a 60 second commit time. This means your documents can take up to 60 seconds to show up in your index; if you don't see them right away, just wait a minute, then hit refresh:
 
-[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/12 - d7-apachesolr-query-results.png]]
+[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/12%20-%20d7-apachesolr-query-results.png]]
 
 To test Drupal, pick out a keyword that you can see in your index. Since my nodes were all random, I grabbed the word "dolor" because it seemed to come up a few times. Go to your Drupal search and enter your chosen keyword. If everything is configured correctly, you should get a set of results:
 
-[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/13 - d7-apachesolr-query-results-2.png]]
+[[https://github.com/onemorecloud/websolr-guides/tree/master/assets/drupal/apachesolr/13%20-%20d7-apachesolr-query-results-2.png]]
 
 
 ## Troubleshooting
