@@ -37,7 +37,7 @@ This is usually finished within a few minutes, so take a short break. When you c
 If you see a message that says your index looks ok, you're done. Occasionally provisioning errors will occur and you will see a message about taking a long time to provision your index. Try appending "/refreshing" to the page's URL and give it a minute or two. If that doesn't clear things up, you will need to open a [support ticket](http://help.websolr.com) and have the Support Team take a closer look.
 
 
-## Setting up the ApacheSolr
+## Setting up the ApacheSolr Module
 
 Once your websolr index is up and running, it's time to configure the ApacheSolr module. Navigate to `admin/config/search/apachesolr/settings` and you should see something like this:
 
@@ -55,11 +55,11 @@ Once you have your URL and a description set up, go ahead and click on "Test con
 
 ![Configure the ApacheSolr module](assets/drupal/apachesolr/09 - d7-apachesolr-configure-apachesolr-4.png)
 
-Next, click on the "Default Index" tab. You will see a few actions for indexing, reindexing and deleting the index. Click on the first one, "Index queued content." This will index a maximum of 50 documents (by default). You could also index all documents at this time, but that may take a while depending on how many documents you have.
+Next, click on the "Default Index" tab. You will see a few actions for indexing, reindexing and deleting the index. You will probably also see the message: "Error: No data was returned from the server." This is NOT an error. It is due to how the ApacheSolr module verifies a connection to the Solr server. Essentially, it requests some administrative functions which are blocked for security reasons by websolr. This [KB article](http://help.websolr.com/kb/common-problems/drupal-apachesolr-module-401-authorization-required) has more information. Basically, don't worry about it:
 
 ![Configure the ApacheSolr module](assets/drupal/apachesolr/10 - d7-apachesolr-configure-apachesolr-5.png)
 
-If everything went smoothly, you should get a message like the one below. If you see any errors, double-check that your settings are correct and that the apachesolr module can communicate with websolr:
+Click on the first option, "Index queued content." This will index a maximum of 50 documents (by default). You could also index all documents at this time, but that may take a while depending on how many documents you have.If everything went smoothly, you should get a message like the one below. If you see any errors (except for the previously-mentioned one about no data being returned from the server), double-check that your settings are correct and that the apachesolr module can communicate with websolr:
 
 ![Configure the ApacheSolr module](assets/drupal/apachesolr/11 - d7-apachesolr-configure-apachesolr-6.png)
 
@@ -70,11 +70,15 @@ Finally, navigate to `admin/config/search/settings` and make sure that the Apach
 
 ## Checking on your index
 
-After the apachesolr module has indicated a successful indexing of your documents, you can navigate to your websolr URL and append "/select" to it. This will return the first set of documents in your index. If you don't see them right away after indexing, don't worry. For reasons of network performance and stability, all websolr indices have a 60 second commit time. This means your documents can take up to 60 seconds to show up in your index; if you don't see them right away, just wait a minute, then hit refresh:
+After the apachesolr module has indicated a successful indexing of your documents, you can navigate to your websolr URL and append "/select" to it. For me, this was `http://ec2-west.websolr.com/solr/750f846502e/select` This will return the first set of documents in your index. If you don't see them right away after indexing, don't worry. For reasons of network performance and stability, all websolr indices have a 60 second commit time. This means your documents can take up to 60 seconds to show up in your index; if you don't see them right away, just wait a minute, then hit refresh:
 
 ![Check the index](assets/drupal/apachesolr/12 - d7-apachesolr-query-results.png)
 
-To test Drupal, pick out a keyword that you can see in your index. Since my nodes were all random, I grabbed the word "dolor" because it seemed to come up a few times. Go to your Drupal search and enter your chosen keyword. If everything is configured correctly, you should get a set of results:
+You can also look at the slice summary, which will indicate the status of your index and how many documents are present:
+
+![Check the index](assets/drupal/apachesolr/12a - d7-apachesolr-query-results-1.png)
+
+To test Drupal, pick out a keyword that you can see in your index. Since my nodes were all randomly-generated, I grabbed the word "dolor" because it seemed to come up a few times. Go to your Drupal search and enter your chosen keyword. If everything is configured correctly, you should get a set of results:
 
 ![Check the search](assets/drupal/apachesolr/13 - d7-apachesolr-query-results-2.png)
 
