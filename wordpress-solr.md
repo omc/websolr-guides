@@ -27,8 +27,6 @@ You may get a screen asking you to fill in your FTP credentials. If so, simply a
 
 You can now edit the plugin settings by navigating to Settings > Solr Options
 
-![Get to the Solr options page](assets/wordpress/solr/Screenshot 5.png)
-
 
 ## Setting up the websolr index
 
