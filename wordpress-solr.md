@@ -1,4 +1,4 @@
-# Configuring Drupal 7 with the ApacheSolr module
+# Configuring Wordpress with the Solr for Wordpress plugin
 
 In this guide, we're going to cover the basics of setting up a websolr index to be used with [Wordpress](http://wordpress.org/) and the [Solr for Wordpress](http://wordpress.org/plugins/solr-for-wordpress/) plugin. 
 
@@ -21,7 +21,7 @@ Search the repository for "Solr for Wordpress." The plugin should be the first o
 
 ![Installation message](assets/wordpress/solr/Screenshot 4.png)
 
-You may get a screen asking you to fill in your FTP credentials. If so, simply add in the information, or ask your internet provider to tell you what it is. You can also [upload manually](http://codex.wordpress.org/Managing_Plugins#Manual_Plugin_Installation). When the installation has finished, activate the new plugin
+You may get a screen asking you to fill in your FTP credentials. If so, simply add in the information, or ask your internet provider to tell you what it is. You can also [upload manually](http://codex.wordpress.org/Managing_Plugins#Manual_Plugin_Installation). When the installation has finished, activate the new plugin. Make sure you disable any other search plugins you may be using. 
 
 ![Find the Solr options panel](assets/wordpress/solr/Screenshot 5.png)
 
@@ -37,6 +37,8 @@ Next, you'll want to open up websolr in a new tab and [add a new slice](https://
 When this form has been filled out, go ahead and click "Create." Afterwards, you will be redirected to a page that shows the status of your index and will probably show a message about taking a few minutes to complete:
 
 ![Create a websolr index](assets/wordpress/solr/Screenshot 6.png)
+
+The string of random characters at the end of the URL is your index's secret key. It is unique to this index, and is generally referred to as your "websolr key."
 
 If you see a message that says your index looks ok, you're done. Occasionally provisioning errors will occur and you will see a message about taking a long time to provision your index. Try appending "/refreshing" to the page's URL and give it a minute or two. If that doesn't clear things up, you will need to open a [support ticket](http://help.websolr.com) and have the Support Team take a closer look.
 
