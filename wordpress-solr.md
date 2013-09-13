@@ -85,7 +85,7 @@ Keep in mind that all indexes on our shared clusters are provisioned with a 60s 
 
 Navigate to Plugins > Editor and select the Solr for Wordpress plugin. In the file solr-for-wordpress.php, you will find a jQuery function like this:
 
-@@@
+```javascript
 $j(document).ready(function() {
     switch1();
     $j('[name=s4w_postload]').click(function() {
@@ -102,11 +102,11 @@ $j(document).ready(function() {
         $j(this).preventDefault();
     });
 });
-@@@
+```
 
 There is something off about the function `preventDefault();`. Change this whole function to:
 
-@@@
+```javascript
 $j(document).ready(function() {
     switch1();
     $j('[name=s4w_postload]').click(function() {
@@ -125,6 +125,7 @@ $j(document).ready(function() {
         return false;
     });
 });
-@@@
+```
+
 
 And that should fix the issue. Special thanks to ribakker on the [wordpress.org forums](http://wordpress.org/support/topic/plugin-solr-for-wordpress-load-all-posts-not-indexing) for taking the time to figure that out.
