@@ -2,6 +2,8 @@
 
 In this guide, we're going to cover the basics of setting up a websolr index to be used with [Wordpress](http://wordpress.org/) and the [Solr for Wordpress](http://wordpress.org/plugins/solr-for-wordpress/) plugin. 
 
+IMPORTANT: As of this writing, there is a bug in the Solr for Wordpress plugin. It is a longstanding JavaScript issue which has not been addressed in the past year. This bug is easily fixed, thanks to user ribakker on the [wordpress.org forums](http://wordpress.org/support/topic/plugin-solr-for-wordpress-load-all-posts-not-indexing). If the plugin is not working for you, see the Troubleshooting section at the end of this document.
+
 
 ## Getting started
 
@@ -43,7 +45,7 @@ The string of random characters at the end of the URL is your index's secret key
 If you see a message that says your index looks ok, you're done. Occasionally provisioning errors will occur and you will see a message about taking a long time to provision your index. Try appending "/refreshing" to the page's URL and give it a minute or two. If that doesn't clear things up, you will need to open a [support ticket](http://help.websolr.com) and have the Support Team take a closer look.
 
 
-## Setting up the ApacheSolr Module
+## Setting up the Solr for Wordpress plugin
 
 Once your websolr index is up and running, switch back to your Wordpress tab. If you haven't already, navigate to the Solr options page where you should see something like this:
 
@@ -75,3 +77,54 @@ Once you have published your work, you can navigate to your websolr index and se
 If you already have a large number of documents in Wordpress, you can instruct the Solr plugin to synchronize your local database with your websolr index by navigating to Settings > Solr Options and clicking on "Load All Pages," "Load All Posts," then "Optimize Index."
 
 Keep in mind that all indexes on our shared clusters are provisioned with a 60s autoCommit setting. That means it could take up to 60s for your changes to become visible. If you index one or more documents, wait a few minutes before checking to see if they're in your index. Of course, if you have any issues with this, please feel free to open a [support ticket](http://help.websolr.com) and have the Support Team take a closer look.
+
+
+## Troubleshooting
+
+### Nothing happens when I try to load my posts/pages!
+
+Navigate to Plugins > Editor and select the Solr for Wordpress plugin. In the file solr-for-wordpress.php, you will find a jQuery function like this:
+
+@@@
+$j(document).ready(function() {
+    switch1();
+    $j('[name=s4w_postload]').click(function() {
+        $j(this).after($percentspan);
+        disableAll();
+        doLoad("post", null);
+        $j(this).preventDefault();
+    });
+    
+    $j('[name=s4w_pageload]').click(function() {
+        $j(this).after($percentspan);
+        disableAll();
+        doLoad("page", null);
+        $j(this).preventDefault();
+    });
+});
+@@@
+
+There is something off about the function `preventDefault();`. Change this whole function to:
+
+@@@
+$j(document).ready(function() {
+    switch1();
+    $j('[name=s4w_postload]').click(function() {
+        $j(this).after($percentspan);
+        disableAll();
+        doLoad("post", null);
+        //$j(this).preventDefault();
+        return false;
+    });
+    
+    $j('[name=s4w_pageload]').click(function() {
+        $j(this).after($percentspan);
+        disableAll();
+        doLoad("page", null);
+        //$j(this).preventDefault();
+        return false;
+    });
+});
+@@@
+
+And that should fix the issue. Special thanks to ribakker on the [wordpress.org forums](http://wordpress.org/support/topic/plugin-solr-for-wordpress-load-all-posts-not-indexing) for taking the time to figure that out.
