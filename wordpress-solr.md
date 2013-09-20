@@ -55,7 +55,7 @@ To connect your Wordpress site to websolr, you will want to configure a single S
 
 ![Solr options page](assets/wordpress/solr/Screenshot 8.png)
 
-A couple points here. If you click on "Check Server Settings," you will probably get an error that says "Ping failed!" That is not a bug or an indication that anything is wrong. It has to do with the plugin trying to access some administrative functions that websolr blocks for security reason. It will not affect search performance.
+A couple points here. If you click on "Check Server Settings," you will probably get an error that says "Ping failed!" That is not a bug or an indication that anything is wrong. It has to do with the plugin trying to access some administrative functions that websolr blocks for security reasons. It will not affect search performance.
 
 
 ## Checking on your index
