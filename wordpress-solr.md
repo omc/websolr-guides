@@ -129,3 +129,11 @@ $j(document).ready(function() {
 
 
 And that should fix the issue. Special thanks to ribakker on the [wordpress.org forums](http://wordpress.org/support/topic/plugin-solr-for-wordpress-load-all-posts-not-indexing) for taking the time to figure that out.
+
+### I've done everything right, but docs still aren't indexed!
+
+We have found that some web hosts like Rackspace are configured in a way that prevents the Solr for Wordpress module from working correctly. It appears to be related to the `max_exec_time` setting for scripts in PHP.ini on the server side.
+
+This is possibly due to the plugin attempting to index all of the pages/posts simultaneously, which could easily take upwards of 30 seconds (the default value) for even a few hundred documents. Ideally, documents would be sent in batches to avoid this problem, but the plugin doesn't seem to support that yet.
+
+ If your documents are not reaching the index, check to see what the PHP error logs say. Chances are simply increasing the `max_exec_time` variable will fix the issue. 
