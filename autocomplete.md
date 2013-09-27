@@ -87,16 +87,19 @@ curl http://index.websolr.com/solr/4d24e17b09c/update -H "Content-type: text/xml
 ### The HTML:
 
 ```html
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Autocomplete Example #1</title>
 		<script type="text/javascript" src="script.js"></script>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
 	</head>
 	<body>
 		<center>
 			Query:
-			<form onsubmit="return false;">
-				<input type="text" name="query" id="query" />
+			<form autocomplete="off" onsubmit="return false;">
+				<input type="text" name="query" id="query" onkeyup="updateTerms();" />
 			</form>
 			Suggestions:
 			<div id="suggestions" style="background-color:#FFFFCC;width:300px;"></div>
