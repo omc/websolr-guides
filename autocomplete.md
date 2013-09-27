@@ -48,7 +48,7 @@ Let's start by creating a *very* basic autocomplete. This is going to have 6 ele
 
 ### The websolr index
 
-I created a Solr 4 index on websolr and used a custom schema (below). IT gave me a URL of http://index.websolr.com/solr/4d24e17b09c (feel free to test against this URL, but know that it's secured against updates).
+I created a Solr 4 index on websolr and used a custom schema (below). It gave me a URL of http://index.websolr.com/solr/4d24e17b09c (feel free to test against this URL, but know that it's secured against updates).
 
 ![Creating the new index](autocomplete-examples/first/new_index.png)
 
@@ -185,3 +185,62 @@ Place these files on to your server or localhost and open up index.html. Enter s
 ![Example #1](autocomplete-examples/first/example_1_demo.png)
 
 This is, obviously, an overly simplistic model. It is the bare minimum that needs to be in place in order for autocomplete to work. However, using this as a codebase, we can expand a bit a get a little more fancy.
+
+## Sorting by popularity
+
+The suggestions given by the example are ordered by how well the query matches the titles in the index. In the image above, the query "b," returns "Breaking Bad" (two grams that start with B), "Burn Notice" (a gram that starts with B at the beginning of the title), and "The Brak Show" (a gram that starts with B in the middle of the title).
+
+Let's say you want to make the ordering a bit more intelligent. You could add a "popularity" field to the index that indicates how popular the document is. This could be measured by hits to the doc, unique visits, or even some algorithm you come up with.
+
+In this example, I am going to add a "sortable float" field to the schema and modify the proxy to sort by the popularity field instead. I'm also going to fire up a new index
+
+### Adding the popularity field:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<schema name="Autocomplete EdgeNGrams Example" version="2.0">
+  <types>
+    <fieldType name="string" class="solr.StrField"  omitNorms="true" />
+    <fieldtype name="text"   class="solr.TextField" positionIncrementGap="1">
+      <analyzer>
+        <tokenizer class="solr.StandardTokenizerFactory" />
+        <filter    class="solr.StandardFilterFactory"    />
+        <filter    class="solr.LowerCaseFilterFactory"   />
+        <filter    class="solr.EdgeNGramFilterFactory" minGramSize="1" maxGramSize="15" side="front"/>
+      </analyzer>
+    </fieldtype>
+    <fieldType name="sfloat" class="solr.SortableFloatField" omitNorms="true"/>
+  </types>
+  <fields>
+    <field name="id"         stored="true" type="string" multiValued="false" indexed="true" />
+    <field name="title"      stored="true" type="text"   multiValued="true"  indexed="true" />
+    <field name="popularity" stored="true" type="sfloat" multiValued="false" indexed="true" />
+  </fields>
+  <uniqueKey>id</uniqueKey>
+  <defaultSearchField>title</defaultSearchField>
+  <solrQueryParser defaultOperator="AND" />
+</schema>
+```
+
+```php
+<?php
+	$q = (in_array('q', array_keys($_GET))) ? $_GET['q'] : '';
+	$url = 'http://index.websolr.com/solr/fa1e5a56fe0/select?q=title:"' . urlencode($q) . '"&sort=popularity+desc&defType=edismax&wt=json';
+	$handle = fopen($url, "r");
+	if ($handle) {
+	    while (!feof($handle)) {
+	        $buffer = fgets($handle, 4096);
+	        echo $buffer;
+	    }
+	    fclose($handle);
+	}
+	exit();
+?>
+```
+
+With these changes in place, the same partial query of "b" returns the same results in a different order:
+
+![Example #2](autocomplete-examples/second/example_2_demo.png)
+
+Ideally, you would then set up a job that updates the `popularity` field every few hours or so, based on where your site's traffic is the heaviest.
+
