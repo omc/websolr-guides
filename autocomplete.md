@@ -50,6 +50,8 @@ Let's start by creating a *very* basic autocomplete. This is going to have 6 ele
 
 I created a Solr 4 index on websolr and used a custom schema (below). IT gave me a URL of http://index.websolr.com/solr/4d24e17b09c (feel free to test against this URL, but know that it's secured against updates).
 
+![Creating the new index](autocomplete-examples/first/new_index.png)
+
 ### The schema
 
 ```xml
@@ -179,5 +181,7 @@ function printList(data) {
 ### Testing out the example:
 
 Place these files on to your server or localhost and open up index.html. Enter some letters into the input field and see the results that are displayed in yellow.
+
+![Example #1](autocomplete-examples/first/example_1_demo.png)
 
 This is, obviously, an overly simplistic model. It is the bare minimum that needs to be in place in order for autocomplete to work. However, using this as a codebase, we can expand a bit a get a little more fancy.

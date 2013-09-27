@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema name="Autocomplete EdgeNGrams Example" version="1.0">
+  <types>
+    <fieldType name="string" class="solr.StrField"  omitNorms="true" />
+    <fieldtype name="text"   class="solr.TextField" positionIncrementGap="1">
+      <analyzer>
+        <tokenizer class="solr.StandardTokenizerFactory" />
+        <filter    class="solr.StandardFilterFactory"    />
+        <filter    class="solr.LowerCaseFilterFactory"   />
+        <filter    class="solr.EdgeNGramFilterFactory" minGramSize="1" maxGramSize="15" side="front"/>
+      </analyzer>
+    </fieldtype>
+    <fieldType name="sfloat" class="solr.SortableFloatField" omitNorms="true"/>
+  </types>
+  <fields>
+    <field name="id"         stored="true" type="string" multiValued="false" indexed="true" />
+    <field name="title"      stored="true" type="text"   multiValued="true"  indexed="true" />
+    <field name="popularity" stored="true" type="sfloat" multiValued="false" indexed="true" />
+  </fields>
+  <uniqueKey>id</uniqueKey>
+  <defaultSearchField>title</defaultSearchField>
+  <solrQueryParser defaultOperator="AND" />
+</schema>
