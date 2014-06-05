@@ -1,0 +1,9 @@
+/* Style adaptations for the documentation */
+
+code {
+	border:none !important;
+}
+
+em {background:transparent !important;}
+
+img {margin:0 auto !important;}

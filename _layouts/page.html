@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html class='no-js guides show' lang='en'>
+    <head>
+        {% include header.html %}
+    </head>
+    <body>
+        <div id='page_wrapper'>
+            <div id='page'>
+                <div id='page_admin_wrapper'>
+                    <div class='row' id='page_admin'></div>
+                </div>
+                <div id='page_nav_wrapper'>
+                    <div class='row' id='page_nav'>
+                        {% include navbar.html %}
+                    </div>
+                </div>
+                <div id='page_main_wrapper'>
+                    <div class='row' id='page_main'>
+                        <div id='guides'>
+                            <div class='page'>
+                                <div class='grid_12'>
+                                    <h1>{{page.title}}</h1>
+                                    {{content}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id='page_footer_wrapper'>
+                    <div class='row' id='page_footer'>
+                        <div id='footer'>
+                            <div class='row'>
+                                <div class='grid_12'>
+                                    <div id='footer-box'>
+                                        {% include footer.html %}
+                                    </div>
+                                </div>
+                            </div>
+                            <p id='twitter'>
+                                <img alt="Tweet" height="24" src="//dkuezrkqitylc.cloudfront.net/assets/tweet-56564516ab8a422fe51a8584f6e276cb.png" width="24" />
+                                <a href="http://www.twitter.com/websolr">Follow @websolr on Twitter</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <p id='apache'><small>Apache, Apache Solr, and Solr are <a href="http://www.apache.org/foundation/marks/">trademarks of the Apache Software Foundation</a>.</small></p>
+            </div>
+        </div>
+    </body>
+    {% include scripts.html %}
+</html>
