@@ -9,14 +9,14 @@ In this guide, we're going to cover how Solr implements pattern matching with wi
 
 ## Wildcards in Solr
 
-Solr supports two types of wildcards: `*` and `?`. The `*` symbol means "anything" while the `?` symbol means "any character." The difference is that `*` can match multiple characters, while `?` will only match one. For example:
+Solr supports two types of wildcards: `\*` and `?`. The `\*` symbol means "anything" while the `?` symbol means "any character." The difference is that `\*` can match multiple characters, while `?` will only match one. For example:
 
-* "c*t" matches "cat", "cult", "count"
+* "c\*t" matches "cat", "cult", "count"
 * "c?t" matches "cat", "cot", "cut"
 
-A common "gotcha" with these wildcards is that the `*` symbol can match any number of terms, or no terms at all, while the `?` can match only one term. For example:
+A common "gotcha" with these wildcards is that the `\*` symbol can match any number of terms, or no terms at all, while the `?` can match only one term. For example:
 
-* "a*t" matches "at", "ant"
+* "a\*t" matches "at", "ant"
 * "a?t" matches "ant", does not match "at"
 
 Another common "gotcha" with wildcards is that **queries with wildcards are not analyzed**. Often developers will create an analyzer on a fieldType that treats text a certain way, then are furstrated when wildcard queries are treated differently. This is the normal behavior. 
@@ -62,13 +62,13 @@ dog     =>  1,4,5,8
 ...
 {% endhighlight %}
 
-Now, if we issue a query like `q=ca*`, Solr will traverse the dictionary until it reaches the "C" section, where it will then look at the first word: "cap." Solr essentially follows this thought process:
+Now, if we issue a query like `q=ca\*`, Solr will traverse the dictionary until it reaches the "C" section, where it will then look at the first word: "cap." Solr essentially follows this thought process:
 
-> Does "ca*" match "cap"? Their first character is 'c,' which matches, so I'll go to the next character. The next character character is 'a,' which matches, so I'll go to the next character. 
+> Does "ca\*" match "cap"? Their first character is 'c,' which matches, so I'll go to the next character. The next character character is 'a,' which matches, so I'll go to the next character. 
 
-> Hmmm... For the query, that's a `*`, followed by the null character, which means I'm now searching the term for a string of arbitrary length, followed by the null character. The next character of the term 'cap' is a 'p.' 'p' is a string of arbitrary length, so that matches. Is it followed by a null character? Yes! There is nothing else to compare, and everything has matched. Thus, 'ca*' matches 'cap;' I'll go ahead and store documents 1,3 and 6 into memory and go on to the next word.
+> Hmmm... For the query, that's a `\*`, followed by the null character, which means I'm now searching the term for a string of arbitrary length, followed by the null character. The next character of the term 'cap' is a 'p.' 'p' is a string of arbitrary length, so that matches. Is it followed by a null character? Yes! There is nothing else to compare, and everything has matched. Thus, 'ca\*' matches 'cap;' I'll go ahead and store documents 1,3 and 6 into memory and go on to the next word.
 
-> Next word in the dictionary: "capsize." The first character matches. The second character matches. Now I'm trying to find another string of arbitrary length followed by the null character. The third character of "capsize" is 'p;' is the next character null? Nope, it's 's.' Oh well, 'ps' is still a string of arbitrary length. Is the next character null? Nope, it's 'i.' Is the next character null? Nope, it's 'z.' Is the next character null? Nope, it's 'e.' Is the next character null? Yes! 'psize' is a null-terminated string of arbitrary length, so it matches `*`. Thus, "ca*" matches "capsize". I'll store documents 2, 6 and 8 into memory.
+> Next word in the dictionary: "capsize." The first character matches. The second character matches. Now I'm trying to find another string of arbitrary length followed by the null character. The third character of "capsize" is 'p;' is the next character null? Nope, it's 's.' Oh well, 'ps' is still a string of arbitrary length. Is the next character null? Nope, it's 'i.' Is the next character null? Nope, it's 'z.' Is the next character null? Nope, it's 'e.' Is the next character null? Yes! 'psize' is a null-terminated string of arbitrary length, so it matches `\*`. Thus, "ca\*" matches "capsize". I'll store documents 2, 6 and 8 into memory.
 
 >  Oh look, I just read over the documents already in memory and found that document 6 is already included. I'll make sure it's only included once. Okay, now my document list is 1, 2, 6 and 8. Moving on to the next word...
 
@@ -83,9 +83,9 @@ Consequently, Solr had to perform 12 comparisons to identify two results. It wou
 
 Due to the way Solr handles wildcards, the developers of Lucene and Solr had the sense to disable leading wildcards by default. If it wasn't obvious from the preceeding example, starting a search with a wildcard is quite possibly the worst thing you can do from a performance standpoint. Rather than jumping to a specific location in the terms dictionary, Solr would need to simply start at the beginning of the dictionary and iterate over every term looking for a pattern, which would mean hundreds of thousands (if not millions) of comparison operations to match a handful of results.
 
-For example, assume the dictionary from the preceding example represents the entirety of an index's content. A query like "*p" would require 62 comparisons to return 4 correct results. That may not seem like a serious problem for a computer (Solr would be able to handle a job like that in a millisecond), but consider the consequences of geometric expansion. That is, as an index grows to tens of thousands or millions of documents, its term dictionary will grow accordingly. The number of comparisons that would need to be made to yield the full set of results could number in the tens or hundreds of millions and require substantial RAM and CPU power.
+For example, assume the dictionary from the preceding example represents the entirety of an index's content. A query like "\*p" would require 62 comparisons to return 4 correct results. That may not seem like a serious problem for a computer (Solr would be able to handle a job like that in a millisecond), but consider the consequences of geometric expansion. That is, as an index grows to tens of thousands or millions of documents, its term dictionary will grow accordingly. The number of comparisons that would need to be made to yield the full set of results could number in the tens or hundreds of millions and require substantial RAM and CPU power.
 
-Leading wildcards are disabled by default for this reason; it saves resources and encourages developers to find a better way to search. However, if your application absolutely requires it (and you're willing to pay for the performance hit). Additionally, as of Solr 1.4+, there is now a reverse wildcards feature to work around these performance problems.
+Leading wildcards are disabled by default for this reason; it saves resources and encourages developers to find a better way to search. However, if your application absolutely requires it (and you're willing to pay for the performance hit), consider using the reverse wildcards feature to work around these performance problems.
 
 Adding the `ReversedWildcardFilterFactory` filter to the end of an analyzer chain in your schema.xml will allow that field to support leading wildcards by reversing the order in which character comparisons occur.
 
