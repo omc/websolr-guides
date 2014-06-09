@@ -17,21 +17,19 @@ There are a few preliminary steps you'll need to take:
 
 3. Check that you have the necessary gems with `bundle show`. You should see something like:
 
-{% highlight text %}
-...
+```
   * sunspot (2.1.0)
   * sunspot_rails (2.1.0)
   * sunspot_solr (2.1.0)
-...
-{% endhighlight %}
+```
 
 If not, add these to your Gemfile:
 
-{% highlight ruby %}
+```ruby
 gem 'sunspot', '~> 2.1.0'
 gem 'sunspot_rails', '~> 2.1.0'
 gem 'sunspot_solr', '~> 2.1.0'
-{% endhighlight %}
+```
 
 and run `bundle install`
 
@@ -44,15 +42,15 @@ and run `bundle install`
 
 Using a specific version of Sunspot is easy with Rails. Simply set the [version number](https://rubygems.org/gems/sunspot/versions) in your Gemfile like so:
 
-{% highlight ruby %}
+```ruby
 gem 'sunspot', '~> 2.1.0'
-{% endhighlight %}
+```
 
 You can also configure your client to use the most up to date version with:
 
-{% highlight ruby %}
+```ruby
 gem 'sunspot', :git => 'git://github.com/sunspot/sunspot.git'
-{% endhighlight %}
+```
 
 Note that adding the Sunspot gem will also add the sunspot_rails and sunspot_solr gems, and all will share the same version. **The dependancies must match the version of the sunspot gem!** If they do not, you will get an error. For example, if you try to use Sunspot 2.1 and sunspot-rails 2.0.0, there will be a version conflict and bundler will give you an error.
 
@@ -79,7 +77,7 @@ This section involves specifying the version of the local Solr instance that wil
 
 9. If you list the files in this directory, you will see a file called solr.xml. This file defines all of your cores. It should look something like this:
 
-{% highlight xml %}
+```xml
 <?xml version="1.0" encoding="UTF-8" ?>
 <solr persistent="false">
   <cores adminPath="/admin/cores" host="${host:}" hostPort="${jetty.port:}">
@@ -88,11 +86,11 @@ This section involves specifying the version of the local Solr instance that wil
     <core name="test"        instanceDir="." dataDir="test/data"/>
   </cores>
 </solr>
-{% endhighlight %}
+```
 
 You can add/remove and rename cores as you like. It would probably be a good idea to rename them to whatever your websolr cores are named. A websolr core is the 11 character alphanumeric string in your websolr URL. So if your websolr URL is http://index.websolr.com/solr/a1b2c3d4e5f, then your core is named a1b2c3d4e5f. If you have two cores, let's say a1b2c3d4e5f and f5e4d3c2b1a, you could change this file to:
 
-{% highlight xml %}
+```xml
 <?xml version="1.0" encoding="UTF-8" ?>
 <solr persistent="false">
   <cores adminPath="/admin/cores" host="${host:}" hostPort="${jetty.port:}">
@@ -100,7 +98,7 @@ You can add/remove and rename cores as you like. It would probably be a good ide
     <core name="f5e4d3c2b1a" instanceDir="." dataDir="a1b2c3d4e5f/data"/>
   </cores>
 </solr>
-{% endhighlight %}
+```
 
 10. Go into the "conf" directory with `cd conf` and make sure your schema.xml and solrconfig.xml match what is on file with websolr (email us if you need a copy of anything). Note that websolr only supports the following files:
 
@@ -121,7 +119,7 @@ So if you are using additional files locally to add extra features to your index
 
 Before you can complete the process, you will need to configure Sunspot to talk to your local Solr instance. Open up the file `config/sunspot.yml` and take a look. A suggested configuration is something like this:
 
-{% highlight yaml %}
+```yaml
 production:
   solr:
     path: /solr/a1b2c3d4e5f
@@ -137,14 +135,14 @@ development:
     hostname: localhost
     port: 8982
     log_level: INFO
-{% endhighlight %}
+```
 
 When you're running in production, Sunspot is configured to connect to your websolr index over port 80. In development, it will connect to your local Solr instance over 8982. You'll obviously need to tweak these values for your particular needs. 
 
 
 ## Bringing it all together
 
-Now that you have the desired versions of Sunspot and Solr up and running, you'll need to index your documents to populate the index(es) you configured in the previous step. Run `bundle exec rake sunspot:solr:reindex` to have Sunspot index your documents to Solr. If you don't get any error messages, you should be set. You can use your web browser to see the results: http://localhost:8982/solr/<core_name>/select
+Now that you have the desired versions of Sunspot and Solr up and running, you'll need to index your documents to populate the index(es) you configured in the previous step. Run `bundle exec rake sunspot:solr:reindex` to have Sunspot index your documents to Solr. If you don't get any error messages, you should be set. You can use your web browser to see the results: `http://localhost:8982/solr/<core_name>/select`
 
 
 ## Troubleshooting
