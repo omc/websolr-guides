@@ -2,3 +2,5 @@ name: Websolr Documentation
 
 
 exclude: [ 'Gemfile', 'Gemfile.lock', 'bin' ]
+
+markdown: kramdown

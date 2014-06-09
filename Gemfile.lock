@@ -60,3 +60,4 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll
+  kramdown
