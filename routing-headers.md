@@ -29,7 +29,9 @@ There are a few ways that these parameters can be used. This section covers some
 
 The request headers can be included in a curl command like so:
 
-`curl -H "X-Websolr-Routing:prefer-replica" http://index.websolr.com/solr/a1b2c3d4e5/select`
+```
+curl -H "X-Websolr-Routing:prefer-replica" http://index.websolr.com/solr/a1b2c3d4e5/select
+```
 
 
 ## Sunspot
