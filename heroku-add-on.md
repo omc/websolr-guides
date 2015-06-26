@@ -102,13 +102,13 @@ If you are adding Websolr to an application with existing data in your developme
 In order to reindex your production data, you may run a command similar to the following from your application’s directory:
 
 ```ruby
-heroku rake sunspot:reindex
+heroku run rake sunspot:reindex
 ```
 
 If you are indexing a large number of documents, or your models us a lot of memory, you may need to reindex in batches smaller than Sunspot’s default of 50. We recommend starting small and gradually experimenting to find the best results. To reindex with a batch size of 10, use the following:
 
 ```ruby
-heroku rake sunspot:reindex[10]
+heroku run rake sunspot:reindex[10]
 ```
 
 Refer to `rake -T sunspot` to see the usage for the reindex task.
