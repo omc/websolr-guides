@@ -71,3 +71,33 @@ If you know of a new client, please let us know or update this list.
 
 * [http://wiki.apache.org/solr/Solrj](http://wiki.apache.org/solr/Solrj)
 
+
+## Javascript
+
+### AJAX Solr
+
+* [https://github.com/evolvingweb/ajax-solr/wiki] (https://github.com/evolvingweb/ajax-solr/wiki)
+
+### Angular-Search
+
+* [https://github.com/newtonlabs/angular-search/] (https://github.com/newtonlabs/angular-search/)
+
+### EAC-CPF Ajax
+
+* [https://bitbucket.org/esrc/eaccpf-ajax] (https://bitbucket.org/esrc/eaccpf-ajax)
+
+### Solr Node Client
+
+* [http://lbdremy.github.io/solr-node-client/] (http://lbdremy.github.io/solr-node-client/)
+
+### Solrstrap
+
+* [http://fergiemcdowall.github.io/solrstrap/] (http://fergiemcdowall.github.io/solrstrap/)
+
+### Solstice
+
+* [https://github.com/front/solstice] (https://github.com/front/solstice)
+
+### Solr Search
+
+* [http://code.google.com/p/solr-search-html/] (http://code.google.com/p/solr-search-html/)
