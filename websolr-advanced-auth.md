@@ -37,6 +37,19 @@ For example, in Ruby:
 OpenSSL::HMAC.hexdigest('sha1', SECRET, "#{time}#{nonce}")
 ```
 
+## Setting your URL
+
+We recommend setting your URL as an environment variable rather than hardcoding it into the app for security reasons. Heroku users will already have a `WEBSOLR_URL` environment variable set up, and users of other platforms/frameworks should set one up as well. If you're not on Heroku, then something like this should work:
+
+```
+$ export WEBSOLR_URL="<the URL for your index>"
+```
+
+Websolr uses standard ports for communicating with an index, so we don't explicitly set those in the URL by default. Most clients can infer the correct port based on the protocol. However, some clients will default to port 80 unless instructed otherwise. This can lead to connectivity problems if the app tries to contact the index over port 80 using TLS/SSL. If you have trouble with this, feel free to set the port manually. We're using:
+
+* 443 for HTTPS (TLS/SSL) protocol. This provides end-to-end encryption during data transmission.
+* 80 for HTTP protocol. This is for plaintext data transmission (not recommending if you're following this guide)
+
 ## Example with RSolr
 
 ```ruby
