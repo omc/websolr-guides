@@ -50,6 +50,26 @@ Websolr uses standard ports for communicating with an index, so we don't explici
 * 443 for HTTPS (TLS/SSL) protocol. This provides end-to-end encryption during data transmission.
 * 80 for HTTP protocol. This is for plaintext data transmission (not recommending if you're following this guide)
 
+Some examples of valid URLs:
+
+```
+# Plaintext:
+$ export WEBSOLR_URL="http://index.websolr.com/solr/a1b2c3d4e5f"
+$ export WEBSOLR_URL="http://index.websolr.com:80/solr/a1b2c3d4e5f"
+
+# Encrypted
+$ export WEBSOLR_URL="https://index.websolr.com/solr/a1b2c3d4e5f"
+$ export WEBSOLR_URL="https://index.websolr.com:443/solr/a1b2c3d4e5f"
+```
+
+Some **invalid** URLs:
+
+```
+$ export WEBSOLR_URL="http://index.websolr.com:443/solr/a1b2c3d4e5f"
+$ export WEBSOLR_URL="https://index.websolr.com:80/solr/a1b2c3d4e5f"
+```
+
+
 ## Example with RSolr
 
 ```ruby
